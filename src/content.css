@@ -1,0 +1,21 @@
+/* Only the added cell has a fixed width. Do not override Google's native
+   column widths, flex bases, shrink factors, or gaps: the flight data wins. */
+[data-seatspecs-cell] {
+  display: block;
+  box-sizing: border-box;
+  flex: 0 0 56px;
+  inline-size: 56px;
+  min-inline-size: 56px;
+  max-inline-size: 56px;
+  margin-inline: 2px;
+  align-self: center;
+  color: inherit;
+  font: inherit;
+}
+[data-seatspecs-cell][hidden] { display: none !important; }
+[data-seatspecs-cell][data-seatspecs-pending] { visibility: hidden !important; }
+/* Keep compact results' native time/airport tracks intact. Only move price
+   and its caption to the small extra row after the emissions/summary line. */
+[data-seatspecs-layout="grid"] > [data-seatspecs-price] { grid-row: var(--seatspecs-price-row) !important; align-self: center; }
+[data-seatspecs-layout="grid"] > [data-seatspecs-caption] { grid-row: var(--seatspecs-caption-row) !important; }
+[data-seatspecs-layout="grid"] > [data-seatspecs-cell] { justify-self: end; }

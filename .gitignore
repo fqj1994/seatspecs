@@ -1,0 +1,5 @@
+node_modules/
+dist/
+seatspecs-extension.zip
+playwright-report/
+test-results/

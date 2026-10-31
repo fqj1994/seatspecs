@@ -1,0 +1,23 @@
+{
+  "name": "seatspecs",
+  "description": "SeatSpecs: seat types, legroom, and Wi-Fi in Google Flights results.",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:browser": "npm run build && playwright test",
+    "package": "npm run build && node scripts/package.mjs",
+    "refresh:locales": "node scripts/refresh-locales.mjs"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.58.0",
+    "@types/node": "^24.0.0",
+    "acorn": "^8.15.0",
+    "esbuild": "^0.25.0",
+    "typescript": "^5.9.0",
+    "vitest": "^4.0.0"
+  }
+}
