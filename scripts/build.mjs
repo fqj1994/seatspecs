@@ -5,9 +5,12 @@ const pkg = JSON.parse(await readFile('package.json', 'utf8'));
 const branding = JSON.parse(await readFile('src/branding.json', 'utf8'));
 if (branding.title.length > 75 || branding.name.length > 12 || branding.description.length > 132) throw new Error('Extension branding exceeds metadata length limits');
 const domains = JSON.parse(await readFile('data/google-domains.json', 'utf8'));
+const icons = Object.fromEntries([16, 32, 48, 128].map(size => [size, `icons/icon${size}.png`]));
 const hash = createHash('sha256');
 for (const file of (await readdir('src')).sort()) hash.update(await readFile(`src/${file}`));
 hash.update(JSON.stringify(domains));
+hash.update(await readFile('assets/icon.svg'));
+for (const file of Object.values(icons)) hash.update(await readFile(`assets/${file}`));
 // Public metadata/build changes must also produce a new installed build ID.
 hash.update(JSON.stringify({ name: pkg.name, version: pkg.version }));
 hash.update(await readFile(new URL(import.meta.url), 'utf8'));
@@ -17,6 +20,8 @@ await rm('dist', { recursive: true, force: true });
 await mkdir('dist', { recursive: true });
 await build({ entryPoints: ['src/capture.ts', 'src/content.ts'], bundle: true, outdir: 'dist', format: 'iife', target: 'chrome111', legalComments: 'none', define: { __SEATSPECS_BUILD_ID__: JSON.stringify(buildId) } });
 await copyFile('src/content.css', 'dist/content.css');
+await mkdir('dist/icons', { recursive: true });
+for (const file of Object.values(icons)) await copyFile(`assets/${file}`, `dist/${file}`);
 await writeFile('dist/manifest.json', JSON.stringify({
   manifest_version: 3,
   name: branding.title,
@@ -25,6 +30,7 @@ await writeFile('dist/manifest.json', JSON.stringify({
   version: pkg.version,
   version_name: `${pkg.version}+${buildId}`,
   minimum_chrome_version: '111',
+  icons,
   content_scripts: [
     { matches, js: ['capture.js'], run_at: 'document_start', world: 'MAIN' },
     { matches, js: ['content.js'], css: ['content.css'], run_at: 'document_start' }

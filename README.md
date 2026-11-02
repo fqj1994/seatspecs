@@ -24,6 +24,7 @@ Outputs:
 - `dist/` — unpacked extension; select this folder in Chrome.
 - `seatspecs-extension.zip` — transferable package; extract it before loading.
 - `dist/BUILD_INFO.json` — product name, version, and deterministic build identifier.
+- The package includes SeatSpecs icons at 16, 32, 48 and 128px.
 
 In the browser where you want to use it:
 
@@ -57,6 +58,14 @@ Wi-Fi labels are **not inline text**: only icons appear in the column. Measureme
 The extension shows **no native hover tooltips**. An empty host `title` also prevents inheriting tooltips from Google's ancestors; full descriptions remain in separate seat and Wi-Fi `aria-label`s, not a single label hiding the whole column. Google's own controls/tooltips are unchanged. For full visual details, manually expand the Google Flights result.
 
 The Google page language is authoritative, not the browser UI language. Alias/script handling includes Hebrew (`iw`/`he`), Serbian Latin/Cyrillic, Chinese variants, and regional English, Spanish, and Portuguese. English is only the fallback for a language not present in the current catalog.
+
+## Icon and Chrome Web Store images
+
+The editable icon is `assets/icon.svg`; checked-in raster exports are in `assets/icons/`. Three **1280 × 800** upload-ready screenshots are in `store/screenshots/`, plus a **440 × 280** promotional tile in `store/promotional/`. Review the full set in `store/preview.png`.
+
+The screenshots use genuine, signed-out Google Flights captures with the extension installed. Blue outlines and the explicitly labeled icon guides are editorial annotations, not additional extension UI. Only current Google Flights features are advertised. See [`store/README.md`](store/README.md) for editable sources, capture provenance, Chrome image requirements and regeneration commands.
+
+`npm run artwork` regenerates icons/compositions offline from checked-in sources and captures; `npm run artwork -- --capture` explicitly refreshes public example searches in a disposable local browser. These are maintainer commands, not part of the extension runtime or normal build.
 
 ## Development and tests
 
@@ -108,7 +117,7 @@ Use a current results URL. Output and screenshots go under `test-results/`. Live
 
 ## Implementation
 
-- `src/branding.json`: SeatSpecs product name, descriptive title, summary, and archive filename. Branding participates in the build hash; build-script and package-version/name changes also produce a new build ID.
+- `src/branding.json`: SeatSpecs product name, descriptive title, summary, and archive filename. Branding and packaged icon artwork participate in the build hash; build-script and package-version/name changes also produce a new build ID.
 - `src/capture.ts`: MAIN-world bootstrap/response observation and History API notifications. Returns Google's native fetch Promise unchanged, clones Requests before their body is consumed, reads cloned response streams, and preserves original XHR callbacks.
 - `src/google-data.ts`, `src/stream.ts`: bounded safe-JSON parsing and one validated adapter for Google's undocumented arrays. No `eval`, dynamically executed remote code, or localized-word classification.
 - `src/session.ts`: search generations, stale-response rejection, per-itinerary ordering, bounded handshake snapshots, and pagination merging.

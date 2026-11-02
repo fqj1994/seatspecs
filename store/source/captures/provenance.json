@@ -1,0 +1,168 @@
+{
+  "capturedAt": "2026-11-02T13:51:07.937Z",
+  "buildId": "b188a48dfcb1",
+  "note": "Public, signed-out example searches. Native Google Flights screenshots with the installed extension. No flight expansion or synthetic implementation injection.",
+  "captures": {
+    "overview": {
+      "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI2LTEyLTA0agcIARIDTEhScgcIARIDRE9IQAFIA3AB&hl=en&curr=USD",
+      "from": "LHR",
+      "to": "DOH",
+      "date": "2026-12-04",
+      "requestedCabin": 3,
+      "width": 1044,
+      "height": 339,
+      "highlights": [
+        {
+          "x": 775.0625,
+          "y": 25,
+          "width": 64,
+          "height": 46
+        },
+        {
+          "x": 775.0625,
+          "y": 118,
+          "width": 64,
+          "height": 46
+        },
+        {
+          "x": 775.0625,
+          "y": 193,
+          "width": 64,
+          "height": 46
+        },
+        {
+          "x": 775.0625,
+          "y": 268,
+          "width": 64,
+          "height": 46
+        }
+      ],
+      "rows": [
+        {
+          "id": "zWpkBd",
+          "pitches": [
+            "30 in"
+          ],
+          "seats": [
+            "4"
+          ],
+          "wifi": [
+            "paid"
+          ]
+        },
+        {
+          "id": "oAB48d",
+          "pitches": [],
+          "seats": [
+            "4",
+            "4"
+          ],
+          "wifi": [
+            "paid",
+            "paid"
+          ]
+        },
+        {
+          "id": "o1Hv4b",
+          "pitches": [],
+          "seats": [
+            "5",
+            "4"
+          ],
+          "wifi": [
+            "paid",
+            "paid"
+          ]
+        },
+        {
+          "id": "a9BN8",
+          "pitches": [],
+          "seats": [
+            "6",
+            "4"
+          ],
+          "wifi": [
+            "free",
+            "free"
+          ]
+        }
+      ]
+    },
+    "business": {
+      "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI2LTEyLTA0agcIARIDTEhScgcIARIDRE9IQAFIA3AB&hl=en&curr=USD",
+      "from": "LHR",
+      "to": "DOH",
+      "date": "2026-12-04",
+      "requestedCabin": 3,
+      "width": 1044,
+      "height": 96,
+      "highlights": [
+        {
+          "x": 775.0625,
+          "y": 25,
+          "width": 64,
+          "height": 46
+        }
+      ],
+      "rows": [
+        {
+          "id": "mC4Ede",
+          "pitches": [],
+          "seats": [
+            "5",
+            "4"
+          ],
+          "wifi": [
+            "free",
+            "free"
+          ]
+        }
+      ]
+    },
+    "wifi": {
+      "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI2LTEyLTA0agcIARIDTEhScgcIARIDRE9IQAFIAXAB&hl=en&curr=USD",
+      "from": "LHR",
+      "to": "DOH",
+      "date": "2026-12-04",
+      "requestedCabin": 1,
+      "width": 1044,
+      "height": 191,
+      "highlights": [
+        {
+          "x": 775.0625,
+          "y": 34,
+          "width": 64,
+          "height": 28
+        },
+        {
+          "x": 775.0625,
+          "y": 109,
+          "width": 64,
+          "height": 28
+        }
+      ],
+      "rows": [
+        {
+          "id": "QsqDFd",
+          "pitches": [
+            "31 in"
+          ],
+          "seats": [],
+          "wifi": [
+            "paid"
+          ]
+        },
+        {
+          "id": "UEjr2b",
+          "pitches": [
+            "31 in"
+          ],
+          "seats": [],
+          "wifi": [
+            "free"
+          ]
+        }
+      ]
+    }
+  }
+}

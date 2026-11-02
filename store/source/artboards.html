@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>SeatSpecs · Chrome Web Store artwork</title>
+<style>
+:root{--ink:#101c36;--blue:#284bee;--mint:#c8f8b5;--muted:#59667a;--paper:#f7f7f2}
+*{box-sizing:border-box}html,body{margin:0;padding:0}body{font-family:'Adwaita Sans',Arial,sans-serif;color:var(--ink);background:#dce2ec;-webkit-font-smoothing:antialiased}
+.artboard{position:relative;isolation:isolate;width:1280px;height:800px;overflow:hidden;background:var(--paper)}
+.brand{position:absolute;left:58px;top:36px;display:flex;align-items:center;gap:8px;font-size:28px;font-weight:750;letter-spacing:-1px;z-index:2}.brand img{width:52px;height:52px;display:block}.edition{position:absolute;right:64px;top:57px;font-size:12px;letter-spacing:1.8px;font-weight:750;color:var(--muted)}
+h1{margin:0;letter-spacing:-2.9px;font-size:64px;line-height:1.06;font-weight:750}p{margin:0;font-size:22px;line-height:1.45;letter-spacing:-.35px}.eyebrow{font-size:12px;font-weight:750;letter-spacing:1.5px;text-transform:uppercase}.footer{position:absolute;bottom:26px;left:64px;right:64px;display:flex;justify-content:space-between;align-items:center;font-size:12px;color:#6b7789;letter-spacing:.1px}.footer strong{font-weight:650}
+.window{position:absolute;overflow:hidden;border:1px solid #d9dfeb;border-radius:16px;background:white;box-shadow:0 18px 46px #09173118}.windowbar{height:38px;display:flex;align-items:center;gap:7px;background:#f4f6f9;border-bottom:1px solid #e6eaf0;padding:0 18px;color:#778197;font-size:12px}.dot{width:7px;height:7px;border-radius:50%;background:#c4cbd7}.url{margin-inline-start:16px;letter-spacing:.2px}.browser-end{margin-left:auto;color:#7b879a;font-size:11px;letter-spacing:.2px}.capture{position:relative;width:100%;line-height:0;background:#fff}.capture img{display:block;width:100%;height:auto}.capture>svg{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}.figure-label{position:absolute;font-size:12px;font-weight:650;letter-spacing:.2px;color:var(--muted)}
+.seat-glyph svg{display:block;width:64px;height:64px;fill:currentColor}.wifi-glyph svg{display:block;width:48px;height:48px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+/* 01 — actual collapsed results, with a clearly marked editorial highlight. */
+#overview{background:radial-gradient(ellipse at 95% 95%,#263c73 0%,transparent 56%),#0b1530;color:white}
+#overview:before{content:'';position:absolute;right:-230px;top:-470px;width:940px;height:940px;border:1px solid #ffffff0b;border-radius:50%;box-shadow:0 0 0 85px #ffffff03,0 0 0 170px #ffffff02;z-index:-1}
+#overview .edition{color:#b1c1e3}#overview h1{position:absolute;left:64px;top:130px;font-size:66px;letter-spacing:-3px}#overview .sub{position:absolute;left:67px;top:220px;color:#bcc9e4;font-size:23px}.tags{position:absolute;left:66px;top:272px;display:flex;gap:10px}.tag{border:1px solid #8fa7db40;border-radius:100px;padding:9px 15px;font-size:12px;color:#e0e7f5;letter-spacing:.2px}.tag:before{content:'';display:inline-block;width:5px;height:5px;background:var(--mint);border-radius:50%;margin-right:8px;vertical-align:2px}
+#overview .window{left:64px;top:326px;width:1152px;max-height:424px;border-color:#ffffff32;box-shadow:0 24px 70px #0004}#overview .figure-label{right:67px;top:303px;color:var(--mint);display:flex;align-items:center;gap:9px}#overview .figure-label:before{content:'';width:24px;height:2px;background:var(--mint)}#overview .footer{color:#9baecc}
+/* 02 — a real business-search row plus an explicit symbol guide, not a popup. */
+#seat-types h1{position:absolute;left:64px;top:126px;font-size:61px;max-width:710px}#seat-types .sub{position:absolute;left:834px;top:150px;width:365px;font-size:21px;color:var(--muted)}
+#seat-types .window{left:64px;top:328px;width:1152px;max-height:156px;box-shadow:0 12px 30px #0917310b}#seat-types .figure-label{left:66px;top:303px}.legend-label{position:absolute;left:66px;top:510px;color:var(--muted)}.seat-cards{position:absolute;left:64px;right:64px;top:541px;display:grid;grid-template-columns:repeat(5,1fr);gap:14px}.seat-card{height:165px;padding:20px 21px;background:white;border:1px solid #e2e6e6;border-radius:18px;display:flex;flex-direction:column;justify-content:space-between}.seat-card .seat-glyph{color:#35425c}.seat-card h2{font-size:17px;line-height:1.2;font-weight:680;letter-spacing:-.35px;margin:0}.seat-card.featured{background:#e7f3dd;border-color:#cdddca}.seat-card.featured .seat-glyph{color:var(--blue)}
+/* 03 — visible pricing, never inferred speeds. */
+#wifi{background:#edf5ef}#wifi h1{position:absolute;left:64px;top:133px;font-size:64px}#wifi .sub{position:absolute;left:68px;top:219px;font-size:22px;color:var(--muted)}#wifi .figure-label{left:66px;top:280px}#wifi .window{left:64px;top:307px;width:1152px;max-height:239px;box-shadow:0 14px 34px #0d34220b}
+.wifi-cards{position:absolute;top:580px;left:64px;right:64px;display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.wifi-card{height:124px;display:flex;align-items:center;gap:22px;padding:20px 25px;background:#fff;border:1px solid #dce6df;border-radius:18px}.wifi-card .wifi-glyph{flex:none;color:var(--blue)}.wifi-card h2{margin:0 0 5px;font-size:23px;font-weight:680;letter-spacing:-.6px}.wifi-card p{font-size:14px;color:var(--muted);letter-spacing:0;line-height:1.35}#wifi .blank-note{position:absolute;top:723px;left:66px;font-size:13px;color:#5a6d61}
+/* Small promotional tile: brand-focused, readable when reduced to half size. */
+#promo{width:440px;height:280px;background:#0b1530;display:flex;align-items:center;justify-content:center;flex-direction:column;color:white;gap:6px}#promo:before{content:'';position:absolute;width:380px;height:380px;border:1px solid #40517b55;border-radius:50%;right:-150px;top:-170px;z-index:-1;box-shadow:0 0 0 48px #ffffff03}#promo img{width:156px;height:156px;margin-top:-14px}#promo .wordmark{font-size:39px;font-weight:750;letter-spacing:-1.5px;line-height:1.1}
+</style>
+</head>
+<body>
+<section class="artboard" id="overview" aria-label="Screenshot 1: See more than the fare">
+  <div class="brand"><img src="../../assets/icon.svg" alt="SeatSpecs icon"><span>SeatSpecs</span></div>
+  <div class="edition">FOR GOOGLE FLIGHTS</div>
+  <h1>See more than the fare.</h1>
+  <p class="sub">Seat types, legroom and Wi-Fi. Right in your search results.</p>
+  <div class="tags"><span class="tag">Seat types</span><span class="tag">Legroom</span><span class="tag">Wi-Fi</span></div>
+  <div class="figure-label">SeatSpecs additions highlighted</div>
+  <div class="window">
+    <div class="windowbar"><i class="dot"></i><i class="dot"></i><i class="dot"></i><span class="url">google.com/travel/flights</span><span class="browser-end">COLLAPSED RESULTS</span></div>
+    <div class="capture"><img src="captures/overview.png" alt="Actual Google Flights results mixing numeric legroom, reclining, lie-flat and suite seats, and free and paid Wi-Fi"><svg data-highlights="overview" aria-hidden="true"></svg></div>
+  </div>
+  <div class="footer"><span>Example search · Actual installed-extension display</span><span>Independent extension. Not affiliated with Google.</span></div>
+</section>
+<section class="artboard" id="seat-types" aria-label="Screenshot 2: Lie-flat versus reclining seats">
+  <div class="brand"><img src="../../assets/icon.svg" alt="SeatSpecs icon"><span>SeatSpecs</span></div>
+  <div class="edition">SEAT TYPES, NOT JUST INCHES</div>
+  <h1>Lie-flat isn’t<br>just reclining.</h1>
+  <p class="sub">Check every leg,<br>even in business class.<br>The seat types can differ.</p>
+  <div class="figure-label">Actual SeatSpecs display in a Google Flights business search</div>
+  <div class="window"><div class="windowbar"><i class="dot"></i><i class="dot"></i><i class="dot"></i><span class="url">google.com/travel/flights</span><span class="browser-end">BUSINESS</span></div><div class="capture"><img src="captures/business.png" alt="A real business-class result with the added seat type and Wi-Fi information"><svg data-highlights="business" aria-hidden="true"></svg></div></div>
+  <div class="legend-label eyebrow">Icon guide · Actual SeatSpecs symbols</div>
+  <div class="seat-cards">
+    <div class="seat-card featured"><div class="seat-glyph" data-seat="5"></div><h2>Lie-flat</h2></div>
+    <div class="seat-card"><div class="seat-glyph" data-seat="8"></div><h2>Standard recliner</h2></div>
+    <div class="seat-card"><div class="seat-glyph" data-seat="4"></div><h2>Extra reclining</h2></div>
+    <div class="seat-card"><div class="seat-glyph" data-seat="6"></div><h2>Suite</h2></div>
+    <div class="seat-card"><div class="seat-glyph" data-seat="9"></div><h2>Angled-flat</h2></div>
+  </div>
+  <div class="footer"><span>Seat types shown when supplied by Google. Equipment can change.</span><span>SeatSpecs</span></div>
+</section>
+<section class="artboard" id="wifi" aria-label="Screenshot 3: Wi-Fi availability and pricing">
+  <div class="brand"><img src="../../assets/icon.svg" alt="SeatSpecs icon"><span>SeatSpecs</span></div>
+  <div class="edition">AVAILABILITY + PRICING</div>
+  <h1>Know the Wi-Fi deal.</h1>
+  <p class="sub">Free, paid or pricing not specified—at a glance.</p>
+  <div class="figure-label">Actual SeatSpecs display in Google Flights</div>
+  <div class="window"><div class="windowbar"><i class="dot"></i><i class="dot"></i><i class="dot"></i><span class="url">google.com/travel/flights</span><span class="browser-end">ECONOMY</span></div><div class="capture"><img src="captures/wifi.png" alt="Real flight results showing the added Wi-Fi indicators"><svg data-highlights="wifi" aria-hidden="true"></svg></div></div>
+  <div class="wifi-cards">
+    <div class="wifi-card"><div class="wifi-glyph" data-wifi="free"></div><div><h2>Free</h2><p>Wi-Fi listed as free</p></div></div>
+    <div class="wifi-card"><div class="wifi-glyph" data-wifi="paid"></div><div><h2>Paid</h2><p>Wi-Fi listed for a fee</p></div></div>
+    <div class="wifi-card"><div class="wifi-glyph" data-wifi="available"></div><div><h2>Pricing unknown</h2><p>Available; pricing not specified</p></div></div>
+  </div>
+  <div class="blank-note">No icon means unlisted or unknown—not necessarily unavailable.</div>
+  <div class="footer"><span>Icon guide · No speed claims or inferred availability</span><span>SeatSpecs</span></div>
+</section>
+<section class="artboard" id="promo" aria-label="SeatSpecs small promotional tile"><img src="../../assets/icon.svg" alt=""><div class="wordmark">SeatSpecs</div></section>
+</body>
+</html>

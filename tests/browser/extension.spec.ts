@@ -1,5 +1,5 @@
 import { test, expect, chromium, type BrowserContext, type Page } from '@playwright/test';
-import { mkdtemp, rm, mkdir } from 'node:fs/promises';
+import { mkdtemp, rm, mkdir, readFile } from 'node:fs/promises';
 import path from 'node:path';
 import { dataFor, pageHTML, rowHTML, type FlightRow } from './fixture';
 import { googleAmenities, googleSegment, itinerary, requestBody, shoppingData, shoppingRequest, transport, RPC } from '../fixtures';
@@ -68,6 +68,8 @@ test('installed manifest uses SeatSpecs branding and keeps the existing Google-o
     expect(manifest.name).toBe(branding.title);
     expect(manifest.short_name).toBe(branding.name);
     expect(manifest.description).toBe(branding.description);
+    expect(manifest.icons).toEqual(Object.fromEntries([16, 32, 48, 128].map(size => [size, `icons/icon${size}.png`])));
+    for (const file of Object.values(manifest.icons) as string[]) expect(await readFile(path.resolve('dist', file))).toEqual(await readFile(path.resolve('assets', file)));
     await expect(cells()).toHaveAttribute('data-seatspecs-build', manifest.version_name.split('+')[1]);
     expect(manifest.version_name.split('+')[1]).toMatch(/^[0-9a-f]{12}$/);
     expect(manifest.content_scripts).toHaveLength(2);
