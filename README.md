@@ -67,6 +67,14 @@ The screenshots use genuine, signed-out Google Flights captures with the extensi
 
 `npm run artwork` regenerates icons/compositions offline from checked-in sources and captures; `npm run artwork -- --capture` explicitly refreshes public example searches in a disposable local browser. These are maintainer commands, not part of the extension runtime or normal build.
 
+## Project website and privacy policy (GitHub Pages)
+
+`docs/` is a self-contained static landing page and privacy policy, using the existing SeatSpecs branding and screenshots. It focuses on seat types, legroom and Wi-Fi, with install links to the actual Chrome Web Store listing. There is no JavaScript, analytics, external font service, or site build dependency. The privacy policy distinguishes the extension's local-only processing from GitHub Pages' security logging.
+
+After changing the artwork, run `npm run pages:sync` to refresh the site's checked-in assets. Preview with `python3 -m http.server 8000 --directory docs`.
+
+To publish after pushing to GitHub, choose **Settings → Pages → Deploy from a branch → main → /docs**. Use the resulting `privacy.html` URL in the Web Store dashboard. The supplied Web Store URL is configured; no GitHub remote or Pages domain is assumed, and adding the files does not deploy them. See [`docs/README.md`](docs/README.md) for setup and pre-publication checks, including developer contact details.
+
 ## Development and tests
 
 ```sh

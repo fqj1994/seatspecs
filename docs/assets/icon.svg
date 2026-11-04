@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128" role="img" aria-labelledby="title description">
+  <title id="title">SeatSpecs</title>
+  <desc id="description">A white reclining seat with mint specification marks on a cobalt blue square.</desc>
+  <!-- The 96px artwork and 16px transparent margins follow Chrome's store-icon guidance. -->
+  <rect x="16" y="16" width="96" height="96" rx="25" fill="#284BEE"/>
+  <g fill="none" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M39 38 48 64Q49.5 69 55 69H76V82"/>
+    <path d="M51 75V89H76"/>
+  </g>
+  <path d="M82 38H94M82 48H91M82 58H88" fill="none" stroke="#C8F8B5" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

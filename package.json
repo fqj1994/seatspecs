@@ -11,7 +11,8 @@
     "test:browser": "npm run build && playwright test",
     "package": "npm run build && node scripts/package.mjs",
     "refresh:locales": "node scripts/refresh-locales.mjs",
-    "artwork": "node scripts/render-artwork.mjs"
+    "artwork": "node scripts/render-artwork.mjs",
+    "pages:sync": "node scripts/sync-pages-assets.mjs"
   },
   "devDependencies": {
     "@playwright/test": "^1.58.0",
